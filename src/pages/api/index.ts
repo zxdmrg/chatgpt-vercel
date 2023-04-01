@@ -110,7 +110,7 @@ export const post: APIRoute = async context => {
 
     const apiKey = randomKey(splitKeys(key))
 
-    if (!apiKey) throw new Error("没有填写 OpenAI API key，或者 key 填写错误。")
+    if (!apiKey) throw new Error("关注帧跳动微信公众号，回复Chatgpt领取使用码！")
 
     const tokens = messages.reduce((acc, cur) => {
       const tokens = countTokens(cur.content)
