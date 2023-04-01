@@ -24,20 +24,20 @@ export default function SettingAction(props: {
     >
       <Show when={shown()}>
         <div class="<sm:max-h-10em max-h-14em overflow-y-auto">
-          <SettingItem icon="i-ri:lock-password-line" label="网站密码">
-            <input
-              type="password"
-              value={props.setting().password}
-              class="max-w-150px ml-1em px-1 text-slate-7 dark:text-slate rounded-sm bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none"
-              onInput={e => {
-                props.setSetting({
-                  ...props.setting(),
-                  password: (e.target as HTMLInputElement).value
-                })
-              }}
-            />
-          </SettingItem>
-          <SettingItem icon="i-carbon:api" label="OpenAI Key">
+          {/*<SettingItem icon="i-ri:lock-password-line" label="网站密码">*/}
+          {/*  <input*/}
+          {/*    type="password"*/}
+          {/*    value={props.setting().password}*/}
+          {/*    class="max-w-150px ml-1em px-1 text-slate-7 dark:text-slate rounded-sm bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none"*/}
+          {/*    onInput={e => {*/}
+          {/*      props.setSetting({*/}
+          {/*        ...props.setting(),*/}
+          {/*        password: (e.target as HTMLInputElement).value*/}
+          {/*      })*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*</SettingItem>*/}
+          <SettingItem icon="i-carbon:api" label="使用码">
             <input
               type="password"
               value={props.setting().openaiAPIKey}
@@ -70,19 +70,19 @@ export default function SettingAction(props: {
               <option value="gpt-4-32k">gpt-4(32k)</option>
             </select>
           </SettingItem>
-          <SettingItem icon="i-carbon:user-online" label="系统角色指令">
-            <input
-              type="text"
-              value={props.setting().systemRule}
-              class="text-ellipsis max-w-150px ml-1em px-1 text-slate-7 dark:text-slate rounded-sm bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none"
-              onInput={e => {
-                props.setSetting({
-                  ...props.setting(),
-                  systemRule: (e.target as HTMLInputElement).value
-                })
-              }}
-            />
-          </SettingItem>
+          {/*<SettingItem icon="i-carbon:user-online" label="系统角色指令">*/}
+          {/*  <input*/}
+          {/*    type="text"*/}
+          {/*    value={props.setting().systemRule}*/}
+          {/*    class="text-ellipsis max-w-150px ml-1em px-1 text-slate-7 dark:text-slate rounded-sm bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none"*/}
+          {/*    onInput={e => {*/}
+          {/*      props.setSetting({*/}
+          {/*        ...props.setting(),*/}
+          {/*        systemRule: (e.target as HTMLInputElement).value*/}
+          {/*      })*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*</SettingItem>*/}
           <SettingItem icon="i-carbon:data-enrichment" label="思维发散程度">
             <input
               type="range"
@@ -148,6 +148,7 @@ export default function SettingAction(props: {
           }}
           icon="i-carbon:settings"
           label="设置"
+          showDesc={true}
         />
         <div class="flex">
           <ActionItem
@@ -203,13 +204,14 @@ function SettingItem(props: {
   )
 }
 
-function ActionItem(props: { onClick: any; icon: string; label?: string }) {
+function ActionItem(props: { onClick: any; icon: string; label?: string; showDesc?:boolean }) {
   return (
     <div
       class="flex items-center cursor-pointer mx-1 p-2 hover:bg-slate hover:bg-op-10 rounded text-1.2em"
       onClick={props.onClick}
     >
       <button class={props.icon} title={props.label} />
+      {props.showDesc && <p class="text-0.4em">输入使用码</p>}
     </div>
   )
 }
