@@ -501,50 +501,50 @@ export default function (props: {
               </Show>
               <div class="flex items-end">
               <textarea
-                  ref={inputRef!}
-                  id="input"
-                  placeholder="与 ta 对话吧"
-                  autocomplete="off"
-                  value={inputContent()}
-                  autofocus
-                  onClick={scrollToBottom}
-                  onKeyDown={e => {
-                    if (e.isComposing) return
-                    if (compatiblePrompt().length) {
-                      if (
-                          e.key === "ArrowUp" ||
-                          e.key === "ArrowDown" ||
-                          e.key === "Enter"
-                      ) {
-                        e.preventDefault()
-                      }
-                    } else if (e.key === "Enter") {
-                      if (!e.shiftKey) {
-                        e.preventDefault()
-                        sendMessage()
-                      }
-                    } else if (e.key === "ArrowUp") {
-                      const userMessages = messageList()
-                          .filter(k => k.role === "user")
-                          .map(k => k.content)
-                      const content = userMessages.at(-1)
-                      if (content && !inputContent()) {
-                        e.preventDefault()
-                        setInputContent(content)
-                      }
+                ref={inputRef!}
+                id="input"
+                placeholder="与 ta 对话吧"
+                autocomplete="off"
+                value={inputContent()}
+                autofocus
+                onClick={scrollToBottom}
+                onKeyDown={e => {
+                  if (e.isComposing) return
+                  if (compatiblePrompt().length) {
+                    if (
+                      e.key === "ArrowUp" ||
+                      e.key === "ArrowDown" ||
+                      e.keyCode === 13
+                    ) {
+                      e.preventDefault()
                     }
-                  }}
-                  onInput={handleInput}
-                  style={{
-                    height: height(),
-                    "border-bottom-right-radius": 0,
-                    "border-top-right-radius":
-                        height() === "48px" ? 0 : "0.25rem",
-                    "border-top-left-radius":
-                        compatiblePrompt().length === 0 ? "0.25rem" : 0
-                  }}
-                  class="self-end py-3 resize-none w-full px-3 text-slate-7 dark:text-slate bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none placeholder:text-slate-400 placeholder:text-slate-400 placeholder:op-40"
-                  rounded-l
+                  } else if (e.keyCode === 13) {
+                    if (!e.shiftKey) {
+                      e.preventDefault()
+                      sendMessage()
+                    }
+                  } else if (e.key === "ArrowUp") {
+                    const userMessages = messageList()
+                      .filter(k => k.role === "user")
+                      .map(k => k.content)
+                    const content = userMessages.at(-1)
+                    if (content && !inputContent()) {
+                      e.preventDefault()
+                      setInputContent(content)
+                    }
+                  }
+                }}
+                onInput={handleInput}
+                style={{
+                  height: height(),
+                  "border-bottom-right-radius": 0,
+                  "border-top-right-radius":
+                    height() === "48px" ? 0 : "0.25rem",
+                  "border-top-left-radius":
+                    compatiblePrompt().length === 0 ? "0.25rem" : 0
+                }}
+                class="self-end py-3 resize-none w-full px-3 text-slate-7 dark:text-slate bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none placeholder:text-slate-400 placeholder:text-slate-400 placeholder:op-40"
+                rounded-l
               />
                 <Show when={inputContent()}>
                   <button
