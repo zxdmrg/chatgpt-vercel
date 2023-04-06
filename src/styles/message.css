@@ -58,3 +58,7 @@
 .dark .message a:hover {
   color: rgba(255, 255, 255, 0.8);
 }
+.chatgpt {
+  background: url(assets/chatgpt-icon.svg) no-repeat;
+  background-size: cover;
+}
