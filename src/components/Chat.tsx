@@ -569,6 +569,7 @@ export default function (props: {
                   />
                 </div>
               </div>
+              <p class="text-0.4em">如果提示Incorrect API key，请重新获取使用码</p>
             </Show>
           </div>
         </div>
