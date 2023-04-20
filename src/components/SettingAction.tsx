@@ -9,6 +9,7 @@ import { clickOutside } from "~/hooks"
 export default function SettingAction(props: {
   setting: Accessor<Setting>
   setSetting: Setter<Setting>
+  prompt: any
   clear: any
   messaages: ChatMessage[]
 }) {
@@ -142,6 +143,7 @@ export default function SettingAction(props: {
         <hr class="my-1 bg-slate-5 bg-op-15 border-none h-1px"></hr>
       </Show>
       <div class="flex items-center justify-between">
+        <div className="flex">
         <ActionItem
           onClick={() => {
             setShown(!shown())
@@ -150,6 +152,13 @@ export default function SettingAction(props: {
           label="设置"
           showDesc={true}
         />
+        <ActionItem
+          onClick={props.prompt}
+          icon="i-carbon:settings"
+          label="角色"
+          showDesc={false}
+        />
+        </div>
         <div class="flex">
           <ActionItem
             onClick={async () => {
@@ -212,6 +221,7 @@ function ActionItem(props: { onClick: any; icon: string; label?: string; showDes
     >
       <button class={props.icon} title={props.label} />
       {props.showDesc && <p class="text-0.4em">输入使用码</p>}
+      {props.label==='角色' && <p class="text-0.4em">{props.label}</p>}
     </div>
   )
 }

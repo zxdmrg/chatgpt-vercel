@@ -280,6 +280,10 @@ export default function (props: {
     setCurrentAssistantMessage("")
   }
 
+  function showPrompt() {
+    setCompatiblePrompt(props.prompts)
+  }
+
   function stopStreamFetch() {
     if (controller()) {
       controller()?.abort()
@@ -476,6 +480,7 @@ export default function (props: {
                   setting={setting}
                   setSetting={setSetting}
                   clear={clearSession}
+                  prompt={showPrompt}
                   messaages={messageList()}
               />
             </Show>
@@ -569,9 +574,10 @@ export default function (props: {
                   />
                 </div>
               </div>
-              <p class="text-0.4em">如果提示Incorrect API key，请前往微信公众号“帧跳动”重新获取使用码！</p>
+
             </Show>
           </div>
+          <div className="text-0.4em" style="position:absolute">如果提示Incorrect API key，请前往微信公众号“帧跳动”重新获取使用码！</div>
         </div>
       </div>
   )
