@@ -154,8 +154,8 @@ export default function SettingAction(props: {
         />
         <ActionItem
           onClick={props.prompt}
-          icon="i-carbon:settings"
-          label="角色"
+          icon="i-carbon:user-role"
+          label="切换角色"
           showDesc={false}
         />
         </div>
@@ -221,7 +221,7 @@ function ActionItem(props: { onClick: any; icon: string; label?: string; showDes
     >
       <button class={props.icon} title={props.label} />
       {props.showDesc && <p class="text-0.4em">输入使用码</p>}
-      {props.label==='角色' && <p class="text-0.4em">{props.label}</p>}
+      {props.label==='切换角色' && <p class="text-0.4em">{props.label}</p>}
     </div>
   )
 }
