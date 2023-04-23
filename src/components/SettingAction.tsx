@@ -51,26 +51,26 @@ export default function SettingAction(props: {
           {/*    }}*/}
           {/*  />*/}
           {/*</SettingItem>*/}
-          <SettingItem
-            icon="i-carbon:machine-learning-model"
-            label="OpenAI 模型"
-          >
-            <select
-              name="model"
-              class="max-w-150px w-full bg-slate bg-op-15 rounded-sm appearance-none accent-slate text-center  focus:bg-op-20 focus:ring-0 focus:outline-none"
-              value={props.setting().model}
-              onChange={e => {
-                props.setSetting({
-                  ...props.setting(),
-                  model: (e.target as HTMLSelectElement).value as Model
-                })
-              }}
-            >
-              <option value="gpt-3.5-turbo">gpt-3.5-turbo(4k)</option>
-              <option value="gpt-4">gpt-4(8k)</option>
-              <option value="gpt-4-32k">gpt-4(32k)</option>
-            </select>
-          </SettingItem>
+          {/*<SettingItem*/}
+          {/*  icon="i-carbon:machine-learning-model"*/}
+          {/*  label="OpenAI 模型"*/}
+          {/*>*/}
+          {/*  <select*/}
+          {/*    name="model"*/}
+          {/*    class="max-w-150px w-full bg-slate bg-op-15 rounded-sm appearance-none accent-slate text-center  focus:bg-op-20 focus:ring-0 focus:outline-none"*/}
+          {/*    value={props.setting().model}*/}
+          {/*    onChange={e => {*/}
+          {/*      props.setSetting({*/}
+          {/*        ...props.setting(),*/}
+          {/*        model: (e.target as HTMLSelectElement).value as Model*/}
+          {/*      })*/}
+          {/*    }}*/}
+          {/*  >*/}
+          {/*    <option value="gpt-3.5-turbo">gpt-3.5-turbo(4k)</option>*/}
+          {/*    <option value="gpt-4">gpt-4(8k)</option>*/}
+          {/*    <option value="gpt-4-32k">gpt-4(32k)</option>*/}
+          {/*  </select>*/}
+          {/*</SettingItem>*/}
           {/*<SettingItem icon="i-carbon:user-online" label="系统角色指令">*/}
           {/*  <input*/}
           {/*    type="text"*/}
@@ -84,61 +84,61 @@ export default function SettingAction(props: {
           {/*    }}*/}
           {/*  />*/}
           {/*</SettingItem>*/}
-          <SettingItem icon="i-carbon:data-enrichment" label="思维发散程度">
-            <input
-              type="range"
-              min={0}
-              max={100}
-              value={String(props.setting().openaiAPITemperature)}
-              class="max-w-150px w-full h-2 bg-slate bg-op-15 rounded-lg appearance-none cursor-pointer accent-slate"
-              onInput={e => {
-                props.setSetting({
-                  ...props.setting(),
-                  openaiAPITemperature: Number(
-                    (e.target as HTMLInputElement).value
-                  )
-                })
-              }}
-            />
-          </SettingItem>
-          <SettingItem
-            icon="i-carbon:save-image"
-            label="记录对话内容，刷新不会消失"
-          >
-            <label class="relative inline-flex items-center cursor-pointer ml-1">
-              <input
-                type="checkbox"
-                checked={props.setting().archiveSession}
-                class="sr-only peer"
-                onChange={e => {
-                  props.setSetting({
-                    ...props.setting(),
-                    archiveSession: (e.target as HTMLInputElement).checked
-                  })
-                }}
-              />
-              <div class="w-9 h-5 bg-slate bg-op-15 peer-focus:outline-none peer-focus:ring-0  rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate"></div>
-            </label>
-          </SettingItem>
-          <SettingItem
-            icon="i-carbon:3d-curve-auto-colon"
-            label="开启连续对话，将加倍消耗 Token"
-          >
-            <label class="relative inline-flex items-center cursor-pointer ml-1">
-              <input
-                type="checkbox"
-                checked={props.setting().continuousDialogue}
-                class="sr-only peer"
-                onChange={e => {
-                  props.setSetting({
-                    ...props.setting(),
-                    continuousDialogue: (e.target as HTMLInputElement).checked
-                  })
-                }}
-              />
-              <div class="w-9 h-5 bg-slate bg-op-15 peer-focus:outline-none peer-focus:ring-0  rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate"></div>
-            </label>
-          </SettingItem>
+          {/*<SettingItem icon="i-carbon:data-enrichment" label="思维发散程度">*/}
+          {/*  <input*/}
+          {/*    type="range"*/}
+          {/*    min={0}*/}
+          {/*    max={100}*/}
+          {/*    value={String(props.setting().openaiAPITemperature)}*/}
+          {/*    class="max-w-150px w-full h-2 bg-slate bg-op-15 rounded-lg appearance-none cursor-pointer accent-slate"*/}
+          {/*    onInput={e => {*/}
+          {/*      props.setSetting({*/}
+          {/*        ...props.setting(),*/}
+          {/*        openaiAPITemperature: Number(*/}
+          {/*          (e.target as HTMLInputElement).value*/}
+          {/*        )*/}
+          {/*      })*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*</SettingItem>*/}
+          {/*<SettingItem*/}
+          {/*  icon="i-carbon:save-image"*/}
+          {/*  label="记录对话内容，刷新不会消失"*/}
+          {/*>*/}
+          {/*  <label class="relative inline-flex items-center cursor-pointer ml-1">*/}
+          {/*    <input*/}
+          {/*      type="checkbox"*/}
+          {/*      checked={props.setting().archiveSession}*/}
+          {/*      class="sr-only peer"*/}
+          {/*      onChange={e => {*/}
+          {/*        props.setSetting({*/}
+          {/*          ...props.setting(),*/}
+          {/*          archiveSession: (e.target as HTMLInputElement).checked*/}
+          {/*        })*/}
+          {/*      }}*/}
+          {/*    />*/}
+          {/*    <div class="w-9 h-5 bg-slate bg-op-15 peer-focus:outline-none peer-focus:ring-0  rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate"></div>*/}
+          {/*  </label>*/}
+          {/*</SettingItem>*/}
+          {/*<SettingItem*/}
+          {/*  icon="i-carbon:3d-curve-auto-colon"*/}
+          {/*  label="开启连续对话，将加倍消耗 Token"*/}
+          {/*>*/}
+          {/*  <label class="relative inline-flex items-center cursor-pointer ml-1">*/}
+          {/*    <input*/}
+          {/*      type="checkbox"*/}
+          {/*      checked={props.setting().continuousDialogue}*/}
+          {/*      class="sr-only peer"*/}
+          {/*      onChange={e => {*/}
+          {/*        props.setSetting({*/}
+          {/*          ...props.setting(),*/}
+          {/*          continuousDialogue: (e.target as HTMLInputElement).checked*/}
+          {/*        })*/}
+          {/*      }}*/}
+          {/*    />*/}
+          {/*    <div class="w-9 h-5 bg-slate bg-op-15 peer-focus:outline-none peer-focus:ring-0  rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate"></div>*/}
+          {/*  </label>*/}
+          {/*</SettingItem>*/}
         </div>
         <hr class="my-1 bg-slate-5 bg-op-15 border-none h-1px"></hr>
       </Show>
