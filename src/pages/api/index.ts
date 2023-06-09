@@ -112,7 +112,7 @@ export const post: APIRoute = async context => {
 
     const apiKey = randomKey(splitKeys(key))
 
-    if (!apiKey) throw new Error("搜索“帧跳动”微信公众号，关注并回复Chatgpt领取新的专属使用码！")
+    if (!apiKey) throw new Error("搜索“瞅啥嘞探索站”微信公众号，关注并回复chatgpt领取使用码！")
 
     const tokens = messages.reduce((acc, cur) => {
       const tokens = countTokens(cur.content)
