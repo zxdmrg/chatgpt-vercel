@@ -577,7 +577,7 @@ export default function (props: {
 
             </Show>
           </div>
-          <div className="text-0.4em" style="position:absolute">如果提示Incorrect API key，请前往微信公众号“帧跳动”重新获取使用码！</div>
+          {/*<div className="text-0.4em" style="position:absolute">如果提示Incorrect API key，请前往微信公众号“帧跳动”重新获取使用码！</div>*/}
         </div>
       </div>
   )
